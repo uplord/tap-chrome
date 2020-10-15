@@ -1,35 +1,33 @@
-console.log(1111);
+var count = parseInt(window.localStorage.getItem('count'));
 
-count = parseInt(window.localStorage.getItem('count'));
-
-if (!count) {
+if ( !count ) {
 	count = 0;
 }
 
 document.getElementById('score').innerHTML = 'Score - ' + count;
 
-document.getElementById('myBtn').addEventListener('click', myFunction);
+document.getElementById('click-btn').addEventListener('click', myFunction);
 
 function myFunction() {
-	var count = parseInt(window.localStorage.getItem('count'));
+    var count = parseInt( window.localStorage.getItem('count') );
 
-	if (!count) {
-		count = 0;
-	}
+    if ( !count ) {
+        count = 0;
+    }
 
-	count = count + 1;
+    count = count + 1;
 
-	window.localStorage.setItem('count', count);
+    window.localStorage.setItem('count', count);
 
-	document.getElementById('score').innerHTML = 'Score - ' + count;
+    document.getElementById('score').innerHTML = 'Score - ' + count;
 };
 
-document.getElementById('myBtn2').addEventListener('click', myReset);
+document.getElementById('reset-btn').addEventListener('click', myReset);
 
 function myReset() {
-	var count = 0;
+    var count = 0;
 
-	window.localStorage.setItem('count', count);
+    window.localStorage.setItem('count', count);
 
-	document.getElementById('score').innerHTML = 'Score - ' + count;
+    document.getElementById('score').innerHTML = 'Score - ' + count;
 };

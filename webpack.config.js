@@ -10,8 +10,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 // webpack.config.js
 module.exports = {
-
-	mode: process.env.NODE_ENV,
+    mode: process.env.NODE_ENV,
     resolve: {
         extensions: ['.js'],
     },
@@ -25,20 +24,20 @@ module.exports = {
     optimization: {
         minimizer: [
             new TerserPlugin({
-	            sourceMap: false,
+                sourceMap: false,
             }),
             new OptimizeCSSAssetsPlugin({})
         ]
     },
     plugins: [
-	    new VueLoaderPlugin(),
+        new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].css',
         })
     ],
     module: {
         rules: [
-	        {
+            {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 exclude: /node_modules/
@@ -66,7 +65,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-	        vue: process.env.NODE_ENV == 'production' ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js',
+            vue: process.env.NODE_ENV == 'production' ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js',
         }
     }
 }
