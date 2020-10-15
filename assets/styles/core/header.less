@@ -1,0 +1,33 @@
+#header {
+	height: 100px;
+	position: sticky;
+	top: 0;
+    left: 0;
+    right: 0;
+    background: #FFF;
+    color: @text_color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+
+    @media (max-width: 767px) {
+		height: 70px;
+    }
+
+    .container {
+        display: flex;
+	    align-items: center;
+	    justify-content: center;
+    }
+}
+
+.logo {
+	display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+
+    svg {
+	    margin-right: 8px;
+    }
+}

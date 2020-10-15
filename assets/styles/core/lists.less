@@ -1,0 +1,44 @@
+/* Lists ------------------------------------- */
+
+ul, ol {
+    margin: 0 0 16px 16px;
+    padding: 0;
+    .last-child();
+
+    ul, ol {
+        margin-top: 10px;
+    }
+}
+
+ul {
+    list-style: disc;
+}
+
+ul ul {
+    list-style: circle;
+}
+
+ul ul ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ol ol {
+    list-style: lower-alpha;
+}
+
+ol ol ol {
+    list-style: lower-roman;
+}
+
+li {
+    line-height: 1.5;
+    margin: 0 0 10px 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

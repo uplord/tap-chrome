@@ -1,0 +1,109 @@
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0 0 16px;
+    .last-child();
+}
+
+.heading1() {
+    .rems(32);
+
+    @media (min-width: 768px) {
+        .rems(48);
+    }
+}
+
+.heading2() {
+    .rems(24);
+
+    @media (min-width: 768px) {
+        .rems(30);
+    }
+}
+
+.heading3() {
+    .rems(22);
+
+    @media (min-width: 768px) {
+        .rems(28);
+    }
+}
+
+.heading4() {
+    .rems(20);
+
+    @media (min-width: 768px) {
+        .rems(24);
+    }
+}
+
+.heading5() {
+    .rems(18);
+
+    @media (min-width: 768px) {
+        .rems(22);
+    }
+}
+
+.heading6() {
+    .rems(18);
+}
+
+h1, .h1 {
+    .heading1();
+}
+
+h2, .h2 {
+    .heading2();
+}
+
+h3, .h3 {
+    .heading3();
+}
+
+h4, .h4 {
+    .heading4();
+}
+
+h5, .h5 {
+    .heading5();
+}
+
+h6, .h6 {
+    .heading6();
+}
+
+p {
+    margin: 0 0 16px;
+    line-height: 28px;
+    .last-child();
+}
+
+em, i, q, dfm {
+    font-style: italic;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    background-color: #000;
+    margin: 24px 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.center {
+    text-align: center;
+}
+
+sup, sub {
+    font-size: 60%;
+}

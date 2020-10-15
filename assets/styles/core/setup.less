@@ -1,0 +1,42 @@
+/* -------------------------------------------------------------------------- */
+/*	Document Setup
+/* -------------------------------------------------------------------------- */
+
+html {
+    font-size: ~'@{base_font}px';
+    line-height: 1.2;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background: @background_color;
+    color: @text_color;
+    .rems(@base_font);
+    font-family: sans-serif;
+    box-sizing: border-box;
+    text-align: left;
+    overflow-y: scroll;
+    height: 100vh;
+    min-width: 320px;
+    min-height: 320px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+	height: 100%;
+    margin: 0 auto;
+}
+
+#content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}

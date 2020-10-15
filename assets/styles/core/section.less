@@ -1,0 +1,92 @@
+section {
+    padding: 56px 0;
+    width: 100%;
+
+    &.cover {
+        display: flex;
+	    align-items: center;
+	    flex-shrink: 0;
+	    height: 100%;
+    }
+
+    header {
+	    margin-bottom: 32px;
+
+	    &:last-child {
+		    margin-bottom: 0;
+	    }
+    }
+}
+
+.row {
+    .reset-list();
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    &:last-child {
+        margin-bottom: -32px;
+    }
+}
+
+@columns: 12;
+@gutters: 32px;
+@columnWidth: 100% / @columns;
+
+.gutters {
+    width: ~"calc(100% + (@{gutters}))";
+	margin-right: @gutters / -2;
+	margin-left: @gutters / -2;
+	margin-bottom: 0;
+
+	&:last-child {
+    	margin-bottom: -@gutters;
+	}
+
+	[class*=column] {
+    	width: ~"calc(100% - @{gutters})";
+		margin-left: @gutters / 2;
+		margin-right: @gutters / 2;
+		margin-bottom: @gutters;
+	}
+}
+
+[class*=column] {
+    width: 100%;
+    margin-bottom: @gutters;
+
+    .gutters & {
+        width: ~"calc(100% - @{gutters})";
+        margin-left: @gutters / 2;
+		margin-right: @gutters / 2;
+		margin-bottom: @gutters;
+    }
+}
+
+@media (min-width: 768px) {
+	.columns(@columns, @gutters);
+}
+
+.column(@index, @gutter: 0px, @name: ~'') when (@index > 0) {
+	.column-@{name}@{index}, .col-@{name}@{index} {
+        width: ~"calc(@{columnWidth} * @{index} - @{gutter})";
+        margin-bottom: @gutters;
+    }
+
+	.column(@index - 1, @gutter, @name);
+}
+
+.columns(@columns, @gutters: 0px, @name: ~'') {
+	.column(0, 0px, @name) {}
+	.column(@columns, 0px, @name);
+
+	.gutters {
+		.column(0, @gutters, @name) {}
+		.column(@columns, @gutters, @name);
+	}
+}
+
+.padding {
+    padding: 10px;
+    background-color: rgba(@disabled_color, 0.08);
+}
